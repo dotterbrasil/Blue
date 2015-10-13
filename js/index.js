@@ -11,18 +11,20 @@
 
 					document.getElementById("dispositivos").innerHTML = lista;
 									
-	};
+	});
+	}
 	function connect(){
 		var cars = ["BMW", "Volvo", "Saab", "Ford"];
 			var text = "";
 			var i;
-			for (i = 0; i < cars.length; i++) {
+		
+		for (i = 0; i < cars.length; i++) {
 				text += cars[i] + "<br>";
 			}
 
 			document.getElementById("dispositivos").innerHTML = text;
 
-	}
+	};
 	/*function list(){					
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){
