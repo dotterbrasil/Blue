@@ -1,20 +1,17 @@
 	var app = {	
 		
 		};
-	function list(){						
+	function list(){					
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){
-									alert(device.id);
+									var lista = '';									
+									lista = "<a  href='#' onclick='connect()'>"+device.id+"</a><br>";
+									document.getElementById("dispositivos").innerHTML = lista;
 								}),
 									alert('Erro');
 								});
 									
 	};
-	function connect(){		
-					bluetoothSerial.isConnected(function(){
-													alert("Conectado");
-												},
-												function(){
-													alert("Falha em conectar");
-													});									
-	};
+	function connect(){
+		
+	}

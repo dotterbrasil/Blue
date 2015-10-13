@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	 <head>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Teste Bluetooth</title>
@@ -7,16 +7,21 @@
         <script type="text/javascript" src="js/index.js"></script>	
         <script type="text/javascript">
             app.initialize();
-				
+			
+			function load(){
+				if(confirm("O Bluetooth será ativado.")){
+							alert('ok');
+		}
+	};
         </script>
     </head>
-    <body>
+    <body onload=''>
 			<br>
-			<br>
-			<br>
-            Teste com bluetooth
-			<br>
-            <button onclick='connect()'>Connect</button><br>				    
-            <button onclick='list()'>Lista</button><br>				    
+            Teste com bluetooth			
+			<br>				    
+            <button onclick='list()'>Lista</button>
+			<br>				    
+			<div id='dispositivos'>
+			</div>
     </body>
 </html>
