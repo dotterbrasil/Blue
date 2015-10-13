@@ -74,7 +74,7 @@
     </js-module>	
 	<js-module src="www/org.bcsphere/ibeacon.js" name="ibeacon">
         <merges target="BC" />
-    </js-module>	>	
+    </js-module>	
 	
     <!-- android -->
     <platform name="android">
