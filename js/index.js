@@ -7,7 +7,8 @@
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){
 									alert(device.id);
-									})
-									},alert('Erro'););
+								}),
+									alert('Erro');
+								});
 									
 	};

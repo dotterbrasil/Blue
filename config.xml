@@ -3,7 +3,7 @@
         id="br.dotter.bluetooth"
         version   = "1.0.0">
 		
-    <name>Bluetooth_Dotter</name>
+    <name>Bluetooth</name>
     <description>
         Teste BluetoothLE.
     </description>
