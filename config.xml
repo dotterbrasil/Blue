@@ -13,7 +13,8 @@
     </author>
 	
 	<!--gap:plugin name="cordova-plugin-bluetoothle" source="npm" /-->
-	<gap:plugin name="org.bcsphere.bluetooth" version="0.5.1" />
+	<gap:plugin name="com.megster.cordova.bluetoothserial" version="0.3.3" />
+	<!--gap:plugin name="org.bcsphere.bluetooth" version="0.5.1" /-->
     <gap:plugin name="org.apache.cordova.device" />
 	
 	<preference name="phonegap-version" value="cli-5.2.0" />
@@ -29,51 +30,5 @@
     <access origin="*" />
     <preference name="fullscreen" value="false" />
     <preference name="DisallowOverscroll" value="true" />   
-
- <js-module src="www/org.underscorejs.underscore/underscore.js" name="underscorejs.underscore">
-        <clobber target="_" />
-    </js-module>
-    <js-module src="www/org.bcsphere/bc.js" name="bcjs">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bcsphere.bluetooth/bluetoothapi.js" name="bluetoothapi">
-        <merges target="navigator.bluetooth" />
-    </js-module>
-    <js-module src="www/org.bluetooth.profile/proximity.js" name="profile.proximity">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.profile/find_me.js" name="profile.find_me">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.profile/serial_port.js" name="profile.serial_port">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.service/battery_service.js" name="service.battery_service">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.service/blood_pressure.js" name="service.blood_pressure">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.service/health_thermometer.js" name="service.health_thermometer">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.service/immediate_alert.js" name="service.immediate_alert">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.service/link_loss.js" name="service.link_loss">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.service/serial_port.js" name="service.serial_port">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bluetooth.service/tx_power.js" name="service.tx_power">
-        <merges target="BC" />
-    </js-module>
-	<js-module src="www/org.bcsphere.ibeacon/ibeaconapi.js" name="ibeacon.ibeaconapi">
-        <merges target="navigator.ibeacon" />
-    </js-module>	
-	<js-module src="www/org.bcsphere/ibeacon.js" name="ibeacon">
-        <merges target="BC" />
-    </js-module>	
 </widget>
 
