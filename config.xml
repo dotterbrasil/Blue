@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0"
+        id="br.dotter.bluetooth"
+        version   = "1.0.0">
+		
+    <name>Bluetooth_Dotter</name>
+    <description>
+        Teste BluetoothLE.
+    </description>
+	
+	<author href="http://www.dotter.com.br" email="eduardo@dotter.com.br">
+    Dotter do Brasil Ltda
+    </author>
+	
+	<!--gap:plugin name="cordova-plugin-bluetoothle" source="npm" /-->
+	<gap:plugin name="org.bcsphere.bluetooth" version="0.5.1" />
+    <gap:plugin name="org.apache.cordova.device" />
+	
+	<preference name="phonegap-version" value="cli-5.2.0" />
+    <preference name="orientation"      value="portrait" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="false" />
+    <preference name="webviewbounce"    value="false" />
+
+    <!--icon src="foto.jpg" />
+    <gap:splash src="foto.jpg" /-->
+	
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="false" />
+    <preference name="DisallowOverscroll" value="true" />   
+
+ <js-module src="www/org.underscorejs.underscore/underscore.js" name="underscorejs.underscore">
+        <clobber target="_" />
+    </js-module>
+    <js-module src="www/org.bcsphere/bc.js" name="bcjs">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bcsphere.bluetooth/bluetoothapi.js" name="bluetoothapi">
+        <merges target="navigator.bluetooth" />
+    </js-module>
+    <js-module src="www/org.bluetooth.profile/proximity.js" name="profile.proximity">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.profile/find_me.js" name="profile.find_me">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.profile/serial_port.js" name="profile.serial_port">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.service/battery_service.js" name="service.battery_service">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.service/blood_pressure.js" name="service.blood_pressure">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.service/health_thermometer.js" name="service.health_thermometer">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.service/immediate_alert.js" name="service.immediate_alert">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.service/link_loss.js" name="service.link_loss">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.service/serial_port.js" name="service.serial_port">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bluetooth.service/tx_power.js" name="service.tx_power">
+        <merges target="BC" />
+    </js-module>
+	<js-module src="www/org.bcsphere.ibeacon/ibeaconapi.js" name="ibeacon.ibeaconapi">
+        <merges target="navigator.ibeacon" />
+    </js-module>	
+	<js-module src="www/org.bcsphere/ibeacon.js" name="ibeacon">
+        <merges target="BC" />
+    </js-module>	>	
+	
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BCBluetooth">
+                <param name="android-package" value="org.bcsphere.bluetooth.BCBluetooth"/>
+            </feature>
+        </config-file>
+		
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.BLUETOOTH"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+        </config-file>
+		
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        </config-file>
+
+        <source-file src="src/android/org/bcsphere/bluetooth/BCBluetooth.java" target-dir="src/org/bcsphere/bluetooth" />
+		<source-file src="src/android/org/bcsphere/bluetooth/IBluetooth.java" target-dir="src/org/bcsphere/bluetooth" />
+		<source-file src="src/android/org/bcsphere/bluetooth/BluetoothG43plus.java" target-dir="src/org/bcsphere/bluetooth" />
+		<source-file src="src/android/org/bcsphere/bluetooth/BluetoothSerialService.java" target-dir="src/org/bcsphere/bluetooth" />
+		<source-file src="src/android/org/bcsphere/bluetooth/tools/BluetoothDetection.java" target-dir="src/org/bcsphere/bluetooth/tools" />
+		<source-file src="src/android/org/bcsphere/bluetooth/tools/Tools.java" target-dir="src/org/bcsphere/bluetooth/tools" />
+    </platform>
+   
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BCBluetooth">
+                <param name="ios-package" value="BCBluetooth"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/BCBluetooth.h" />
+	<source-file src="src/ios/BCBluetooth.m" />
+        <framework src="CoreBluetooth.framework" weak="true" />
+    </platform>	
+</widget>
+
