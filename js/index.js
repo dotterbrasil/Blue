@@ -1,24 +1,13 @@
 	var app = {	
 		
 		};
-	function list(){					
+	function list(){	
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){									
 									var lista = "";
-									lista += "<a  href='#' onclick='connect()'>"+device.id+"</a><br>";
+									lista += "<a href='#' onclick='connect()'>"+device.id+"</a><br>";
 								})
-							});
-									document.getElementById("dispositivos").innerHTML = lista;
+							}, alert('Error'));
+			document.getElementById("dispositivos").innerHTML = lista;
 	};
-	function connect(){
-		var cars = ["BMW", "Volvo", "Saab", "Ford"];
-			var text = "";
-			var i;
-		
-		for (i = 0; i < cars.length; i++) {
-				text += cars[i] + "<br>";
-			}
-
-			document.getElementById("dispositivos").innerHTML = text;
-
-	};
+	
