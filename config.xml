@@ -75,42 +75,5 @@
 	<js-module src="www/org.bcsphere/ibeacon.js" name="ibeacon">
         <merges target="BC" />
     </js-module>	
-	
-    <!-- android -->
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="BCBluetooth">
-                <param name="android-package" value="org.bcsphere.bluetooth.BCBluetooth"/>
-            </feature>
-        </config-file>
-		
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.BLUETOOTH"/>
-            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-        </config-file>
-		
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        </config-file>
-
-        <source-file src="src/android/org/bcsphere/bluetooth/BCBluetooth.java" target-dir="src/org/bcsphere/bluetooth" />
-		<source-file src="src/android/org/bcsphere/bluetooth/IBluetooth.java" target-dir="src/org/bcsphere/bluetooth" />
-		<source-file src="src/android/org/bcsphere/bluetooth/BluetoothG43plus.java" target-dir="src/org/bcsphere/bluetooth" />
-		<source-file src="src/android/org/bcsphere/bluetooth/BluetoothSerialService.java" target-dir="src/org/bcsphere/bluetooth" />
-		<source-file src="src/android/org/bcsphere/bluetooth/tools/BluetoothDetection.java" target-dir="src/org/bcsphere/bluetooth/tools" />
-		<source-file src="src/android/org/bcsphere/bluetooth/tools/Tools.java" target-dir="src/org/bcsphere/bluetooth/tools" />
-    </platform>
-   
-
-    <!-- ios -->
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="BCBluetooth">
-                <param name="ios-package" value="BCBluetooth"/>
-            </feature>
-        </config-file>
-        <header-file src="src/ios/BCBluetooth.h" />
-	<source-file src="src/ios/BCBluetooth.m" />
-        <framework src="CoreBluetooth.framework" weak="true" />
-    </platform>	
 </widget>
 
