@@ -9,7 +9,8 @@
 									var lista = "";
 									dispositivo = "<a href='#' onclick='connect()'>"+device.id+"</a><br>";
 									lista += dispositivo;
-								}), document.getElementById("dispositivos").innerHTML = lista;
+									document.getElementById("dispositivos").innerHTML = lista;
+								})
 							}, alert('Error'));			
 	};
 	
