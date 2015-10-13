@@ -4,11 +4,12 @@
 	function list(){	
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){									
+									var dispositivo = "";
 									var lista = "";
-									lista = "<a href='#' onclick='connect()'>"+device.id+"</a><br>";
-									document.getElementById("dispositivos").innerHTML = lista;
+									dispositivo = "<a href='#' onclick='connect()'>"+device.id+"</a><br>";
+									lista += dispositivo;
 								})
 							}, alert('Error'));
-			/*document.getElementById("dispositivos").innerHTML = lista;*/
+			document.getElementById("dispositivos").innerHTML = lista;
 	};
 	
