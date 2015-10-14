@@ -21,7 +21,8 @@
 				},  alert("Erro em buscar lista."));		
 	};
 	function connect(link){
-		link = link+"<br>";
+		var res = link.slice(1, 17);
+		link = res+"<br>";
 		document.getElementById("status").innerHTML = link;
 		//bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
 	};
