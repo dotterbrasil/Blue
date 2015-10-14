@@ -14,14 +14,15 @@
 					devices.forEach(function(device) {
 						var link = '';
 							link = '"'+device.id+'"';
-							link = device.id;
-							lista += "<a href='#' onclick='connect("+device.id+")'>"+device.name+"</a><br>";
+							//link = device.id;
+							lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
 							document.getElementById("dispositivos").innerHTML = lista;
 					})
 				},  alert("Erro em buscar lista."));		
 	};
 	function connect(link){
-		alert("entrou");
+		link = link+"<br>";
+		document.getElementById("status").innerHTML = link;
 		bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
 	};
 	/*function list(){ 
