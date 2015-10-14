@@ -10,7 +10,7 @@
 		};
 	function list(){ 
 					var lista = "";
-					bluetoothSerial.discoverUnpaired(function(devices) {
+					bluetoothSerial.list(function(devices) {
 					devices.forEach(function(device) {
 						var link = '';
 							link = '"'+device.id+'"';
@@ -21,11 +21,11 @@
 	};
 	function connect(link){
 		alert(link);
-		bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);
+		bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
 	};
 	/*function list(){ 
 					var lista = "";
-					bluetoothSerial.list(function(devices){
+					bluetoothSerial.discoverUnpaired(function(devices){
 						devices.forEach(function(device){
 									var link = '';
 									link = '"'+device.id+'"';
