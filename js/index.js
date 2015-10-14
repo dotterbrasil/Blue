@@ -1,12 +1,12 @@
 	var app = {	
 			connectSuccess: function(){
-			aleert('Conectado.');
+			alert('Conectado.');
 			},
 			connectFailure: function(){
 			alert('Falha na conexao.');
 			}
 		};
-	function list(){
+	function list(){ alert('');
 					var lista = "";
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){									
@@ -15,7 +15,7 @@
 								})
 							});			
 	};
-	function connect(device.id){
+	function connect(device){
 		alert(device.id);
 		//bluetoothSerial.connect(device, app.connectSuccess, app.connectFailure);
 	};
