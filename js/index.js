@@ -1,15 +1,21 @@
 	var app = {	
-		
+			connectSuccess: function(){
+			aleert('Conectado.');
+			},
+			connectFailure: function(){
+			alert('Falha na conexao.');
+			}
 		};
-	function list(){	
+	function list(){	alert('#1');
 					var lista = "";
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){									
-									lista += "<a href='#' onclick='connect()'>"+device.id+"</a><br>";
+									lista += "<a href='#' onclick='connect("+device.id+")'>"+device.name+"</a><br>";
 									document.getElementById("dispositivos").innerHTML = lista;
 								})
 							});			
 	};
-	function connect(){
-		alert('OK');
+	function connect(device){
+		alert(device);
+		//bluetoothSerial.connect(device, app.connectSuccess, app.connectFailure);
 	};
