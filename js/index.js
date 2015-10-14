@@ -11,7 +11,7 @@
 		};		
 	function list(){ 
 					var lista = "";
-					bluetoothSerial.discoverUnpaired(function(devices) {
+					bluetoothSerial.list(function(devices) {
 					devices.forEach(function(device) {
 						var link = '';
 							link = '"'+device.id+'"';
@@ -42,6 +42,7 @@
 			devices.forEach(function(device){
 				var link = '';
 				link = '"'+device.id+'"';
+				alert("ate aqui"+link);
 				lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
 				document.getElementById("dispositivos").innerHTML = lista;
 				})								
