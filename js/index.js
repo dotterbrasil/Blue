@@ -40,12 +40,10 @@
 	function buscar(){ 
 		bluetoothSerial.discoverUnpaired(function(devices){
 			devices.forEach(function(device){
-				var i = 0;
-				var dispositivo = '';
-
-				dispositivo = '"'+device.id+'"';
-				string += +device.id+";";
-				document.getElementById("hidden").value = text;
+				var link = '';
+				link = '"'+device.id+'"';
+				lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
+				document.getElementById("dispositivos").innerHTML = lista;
 				})								
 		});		
 		
