@@ -17,7 +17,7 @@
 							lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
 							document.getElementById("dispositivos").innerHTML = lista;
 					})
-				}, failure);		
+				});		
 	};
 	function connect(link){
 		alert(link);
