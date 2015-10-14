@@ -10,4 +10,6 @@
 								})
 							});			
 	};
-	
+	function connect(){
+		alert('OK');
+	};
