@@ -2,13 +2,12 @@
 		
 		};
 	function list(){	
+					var lista = "";
 					bluetoothSerial.list(function(devices){
-						document.getElementById("dispositivos").innerHTML = devices;
-						devices.forEach(function(device){	
-									/*var lista = "";
+						devices.forEach(function(device){									
 									lista += "<a href='#' onclick='connect()'>"+device.id+"</a><br>";
-									document.getElementById("dispositivos").innerHTML = lista;*/
+									document.getElementById("dispositivos").innerHTML = lista;
 								})
-							}, alert('Error'));			
+							});			
 	};
 	
