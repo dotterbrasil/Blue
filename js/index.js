@@ -1,11 +1,10 @@
 	var app = {	
 			connectSuccess: function(){
-			status = "<input value='Conectado.'/><br>";
+			status = "Conectado.<br>";
 			document.getElementById("status").innerHTML = status;
 			},
 			connectFailure: function(){
-			alert('Falha na conexao.');
-			status = "<input value='Falha na conexao.'/><br>";
+			status = "Falha na conexao.<br>";
 			document.getElementById("status").innerHTML = status;
 			}
 		};
