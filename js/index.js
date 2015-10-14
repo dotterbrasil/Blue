@@ -6,7 +6,7 @@
 			alert('Falha na conexao.');
 			}
 		};
-	function list(){ alert();
+	function list(){ 
 					var lista = "";
 					bluetoothSerial.list(function(devices){
 						devices.forEach(function(device){									
@@ -16,7 +16,7 @@
 							});			
 	};
 	function connect(device){
-		alert(device);
+		alert(device.id);
 		//bluetoothSerial.connect(device, app.connectSuccess, app.connectFailure);
 	};
 	/*	function teste(){
