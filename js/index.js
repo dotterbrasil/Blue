@@ -8,7 +8,19 @@
 			//document.getElementById("status").innerHTML = status;
 			alert("Error");
 			},
-		};		
+	};		
+		function buscar(){ alert("#2");
+		bluetoothSerial.discoverUnpaired(function(devices){
+			devices.forEach(function(device){
+				alert("#2");
+				var link = '';
+				link = '"'+device.id+'"';
+				lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
+				document.getElementById("dispositivos").innerHTML = lista;
+				})								
+		});		
+		
+	};
 	function list(){ 
 					var lista = "";
 					bluetoothSerial.list(function(devices) {
@@ -37,16 +49,5 @@
 				}
 													
 	};
-	function buscar(){ 
-		bluetoothSerial.discoverUnpaired(function(devices){
-			devices.forEach(function(device){
-				var link = '';
-				link = '"'+device.id+'"';
-				alert("ate aqui"+link);
-				lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
-				document.getElementById("dispositivos").innerHTML = lista;
-				})								
-		});		
-		
-	};
+	
 	
