@@ -23,7 +23,7 @@
 	function connect(link){
 		link = link+"<br>";
 		document.getElementById("status").innerHTML = link;
-		bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
+		//bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
 	};
 	/*function list(){ 
 					var lista = "";
