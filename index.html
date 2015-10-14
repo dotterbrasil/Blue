@@ -8,22 +8,39 @@
         <script type="text/javascript">
             app.initialize();
 			
-			function load(){
-				if(confirm("O Bluetooth será ativado.")){
-							alert('ok');
-		}
-	};		
+		/*	function load(){
+				var cars = ["BMW", "Volvo", "Saab", "Ford"];
+					var text = "";
+					var i;
+					for (i = 0; i < cars.length; i++) {
+						text += cars[i]+';';
+					}
+					document.getElementById("dispositivos").innerHTML = text;
+					
+					var mac = string.split(";");		
+					var quantidade = mac.length;
+					var quantidade = quantidade - 1;
+					for (contador = 0; contador < quantidade; contador++){
+								alert(mac[contador]);							
+					}	
+	};		*/
         </script>
     </head>
     <body onload=''>
 			<br>
             Teste com bluetooth			
 			<br>				    
-            <button onclick='list()'>Lista</button><br>			
+            <!--button onclick='list()'>Lista</button--><br>			
+            <button onclick='connect()'>Teste</button><br>				
 			<div id='status'>
 			</div>
 			<br>				    
 			<div id='dispositivos'>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div id='busca_device'>
 			</div>
     </body>
 </html>
