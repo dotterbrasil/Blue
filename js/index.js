@@ -11,7 +11,7 @@
 		};		
 	function list(){ 
 					var lista = "";
-					bluetoothSerial.list(function(devices) {
+					bluetoothSerial.discoverUnpaired(function(devices) {
 					devices.forEach(function(device) {
 						var link = '';
 							link = '"'+device.id+'"';
