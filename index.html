@@ -8,7 +8,7 @@
         <script type="text/javascript">
             app.initialize();
 			
-		/*	function load(){
+			/*function load(){
 				var cars = ["BMW", "Volvo", "Saab", "Ford"];
 					var text = "";
 					var i;
@@ -17,30 +17,28 @@
 					}
 					document.getElementById("dispositivos").innerHTML = text;
 					
-					var mac = string.split(";");		
+					var mac = text.split(";");		
 					var quantidade = mac.length;
 					var quantidade = quantidade - 1;
 					for (contador = 0; contador < quantidade; contador++){
-								alert(mac[contador]);							
+								if(mac[contador] = link){
+										alert("Conectado");
+								}else{
+										alert("Dispositivo desconectado");
+								}
 					}	
-	};		*/
+	};	*/	
         </script>
     </head>
     <body onload=''>
 			<br>
             Teste com bluetooth			
 			<br>				    
-            <!--button onclick='list()'>Lista</button--><br>			
-            <button onclick='connect()'>Teste</button><br>				
+            <button onclick='list()'>Lista</button><br>				
 			<div id='status'>
 			</div>
 			<br>				    
 			<div id='dispositivos'>
-			</div>
-			<br>
-			<br>
-			<br>
-			<div id='busca_device'>
 			</div>
     </body>
 </html>

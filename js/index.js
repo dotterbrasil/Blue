@@ -8,25 +8,7 @@
 			//document.getElementById("status").innerHTML = status;
 			alert("Error");
 			},
-		/*	busca: function(){ 
-					var lista = "";
-					bluetoothSerial.discoverUnpaired(function(devices){
-						devices.forEach(function(device){
-									var i = 0;
-									var dispositivo = '';
-									dispositivo = '"'+device.id+'"';
-									string += +device.id+";";
-									
-									var mac = string.split(";");		
-									var quantidade = mac.length;
-									var quantidade = quantidade - 1;
-									for (i = 0; i < quantidade; i++){
-												mac[i];							
-									}									
-								})
-							});			
-	};*/
-		};
+		};		
 	function list(){ 
 					var lista = "";
 					bluetoothSerial.list(function(devices) {
@@ -39,7 +21,30 @@
 					})
 				});		
 	};
-	function connect(){ alert("vc é um cara legal");
-		bluetoothSerial.connect("18:3B:D2:AD:64:45", app.connectSuccess, app.connectFailure);		
+	function connect(link){ 
+		document.getElementById("dispositivos").innerHTML = "";
+		document.getElementById("status").innerHTML = link;
+		
+		var lista = "";
+					bluetoothSerial.discoverUnpaired(function(devices){
+						devices.forEach(function(device){
+									var i = 0;
+									var dispositivo = '';
+									dispositivo = '"'+device.id+'"';
+									string += +device.id+";";
+									
+									var mac = string.split(";");		
+									var quantidade = mac.length;
+									var quantidade = quantidade - 1;
+									
+									for (contador = 0; contador < quantidade; contador++){
+										if(mac[contador] == link){
+												alert("Conectado");
+										}
+												alert("Dispositivo desconectado");										
+									}									
+								})
+								
+							});				
 	};
 	
