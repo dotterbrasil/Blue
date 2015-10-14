@@ -21,5 +21,6 @@
 							});			
 	};
 	function connect(link){
+		alert(link);
 		bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);
 	};
