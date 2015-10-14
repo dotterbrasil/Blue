@@ -15,7 +15,7 @@
 								})
 							});			
 	};
-	function connect(device){
-		alert(device);
+	function connect(device.id){
+		alert(device.id);
 		//bluetoothSerial.connect(device, app.connectSuccess, app.connectFailure);
 	};
