@@ -1,9 +1,12 @@
 	var app = {	
 			connectSuccess: function(){
-			alert('Conectado.');
+			status = "<input value='Conectado.'/><br>";
+			document.getElementById("status").innerHTML = status;
 			},
 			connectFailure: function(){
 			alert('Falha na conexao.');
+			status = "<input value='Falha na conexao.'/><br>";
+			document.getElementById("status").innerHTML = status;
 			}
 		};
 	function list(){ 
@@ -18,6 +21,5 @@
 							});			
 	};
 	function connect(link){
-		alert(link);
 		bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);
 	};
