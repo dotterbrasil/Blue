@@ -21,7 +21,7 @@
 					})
 				},  alert("Erro em buscar lista."));		
 	};
-	function connect(link)
+	function connect(link){
 		document.getElementById("status").innerHTML = link;
 		bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
 	};
