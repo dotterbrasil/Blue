@@ -1,4 +1,4 @@
-	var app = {	
+	var app = {		
 			connectSuccess: function(){
 			status = "Conectado.<br>";
 			document.getElementById("status").innerHTML = status;
@@ -24,27 +24,30 @@
 	function connect(link){ 
 		document.getElementById("dispositivos").innerHTML = "";
 		document.getElementById("status").innerHTML = link;
+		var string = document.getElementById("hidden").value;
+									
+				var mac = string.split(";");		
+				var quantidade = mac.length;
+				var quantidade = quantidade - 1;
+				
+				for (contador = 0; contador < quantidade; contador++){
+					if(mac[contador] == link){
+							alert("Conectado");
+					}
+				}
+													
+	};
+	function buscar(){ 
+		bluetoothSerial.discoverUnpaired(function(devices){
+			devices.forEach(function(device){
+				var i = 0;
+				var dispositivo = '';
+
+				dispositivo = '"'+device.id+'"';
+				string += +device.id+";";
+				document.getElementById("hidden").value = text;
+				})								
+		});		
 		
-		var lista = "";
-					bluetoothSerial.discoverUnpaired(function(devices){
-						devices.forEach(function(device){
-									var i = 0;
-									var dispositivo = '';
-									dispositivo = '"'+device.id+'"';
-									string += +device.id+";";
-									
-									var mac = string.split(";");		
-									var quantidade = mac.length;
-									var quantidade = quantidade - 1;
-									
-									for (contador = 0; contador < quantidade; contador++){
-										if(mac[contador] == link){
-												alert("Conectado");
-										}
-												alert("Dispositivo desconectado");										
-									}									
-								})
-								
-							});				
 	};
 	
