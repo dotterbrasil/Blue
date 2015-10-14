@@ -4,8 +4,9 @@
 			document.getElementById("status").innerHTML = status;
 			},
 			connectFailure: function(){
-			status = "Falha na conexao.<br>";
-			document.getElementById("status").innerHTML = status;
+			//status = "Falha na conexao.<br>";
+			//document.getElementById("status").innerHTML = status;
+			alert("Error");
 			}
 		};
 	function list(){ 
@@ -20,11 +21,9 @@
 					})
 				},  alert("Erro em buscar lista."));		
 	};
-	function connect(link){
-		var res = link.slice(1, 17);
-		link = res+"<br>";
+	function connect(link)
 		document.getElementById("status").innerHTML = link;
-		//bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
+		bluetoothSerial.connectInsecure(link, app.connectSuccess, app.connectFailure);
 	};
 	/*function list(){ 
 					var lista = "";
