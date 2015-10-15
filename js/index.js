@@ -13,15 +13,16 @@
 				alert('Dentro do loop');
 				document.getElementById("status").innerHTML = '...';
 				bluetoothSerial.isConnected(app.conectado, app.desconectado);		
-			},		
-			
+			},					
 			conectado: function(){
+				alert('Continua conectado');
 				document.getElementById("status").innerHTML = 'Continua conectado';
 				setTimeout(app.time, 3000);
 			},
 			desconectado: function(){
 				alert('Dispositivo desconectado!');
 				document.getElementById("status").innerHTML = "Dispositivo desconectado!";
+				setTimeout(app.time, 3000);
 			},
 	};			
 	function list(){
