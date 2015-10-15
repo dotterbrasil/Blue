@@ -1,32 +1,27 @@
-	var app = {		
+	var app = {			
 			connectSuccess: function(){
-			status = "Conectado.<br>";
-			document.getElementById("status").innerHTML = status;
-			alert('Conectado');
+				status = "Conectado";
+				document.getElementById("status").innerHTML = status;
+				localStorage.setItem("verificacao", status);	
+				alert(status);						
+				setTimeout(app.time, 3000);
 			},
 			connectFailure: function(){
-			status = "Falha na conexao.<br>";
-			document.getElementById("status").innerHTML = status;
-			alert("Error");
-			},
-	};		
-	function buscar(){ 
-		var lista = '';
-		bluetoothSerial.discoverUnpaired(function(devices){
-			devices.forEach(function(device){
-				var link = '';
-				link = '"'+device.id+'"';
-				lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
-				//lista += device.id+";";
-				document.getElementById("dispositivos").innerHTML = lista;
-				//document.getElementById("hidden").innerHTML = lista;
-				})								
-		}, alert("Error #3"));				
-	};
-	function list(){ 
+				status = "Falha na conexao";
+				document.getElementById("status").innerHTML = status;
+				localStorage.setItem("verificacao", status);
+				alert(status);
+			},			
+			time: function(){			
+				var link = localStorage.getItem("carro");				
+				var status = localStorage.getItem("verificacao");					
+					bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);			
+			},		
+	};			
+	function list(){
 					document.getElementById("status").innerHTML = '';
 					var lista = "";
-					bluetoothSerial.list(function(devices) { //---- bluetoothSerial.list
+					bluetoothSerial.list(function(devices) {
 					devices.forEach(function(device) {
 						var link = '';
 							link = '"'+device.id+'"';
@@ -36,22 +31,11 @@
 				});		
 	};
 	function connect(link){ 
-	document.getElementById("dispositivos").innerHTML = "";
-	document.getElementById("dispositivos").innerHTML = link;
-	bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);
-	
-	/*	
-		var string = document.getElementById("hidden").value;
-									
-				var mac = string.split(";");		
-				var quantidade = mac.length;
-				var quantidade = quantidade - 1;
-				
-				for (contador = 0; contador < quantidade; contador++){
-					if(mac[contador] == link){
-							alert("Conectado");
-					}
-				}*/
+		document.getElementById("dispositivos").innerHTML = "";
+		document.getElementById("dispositivos").innerHTML = 'Device: '+link;
+		localStorage.setItem("carro", link);
+		
+		bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);
 	};
 	
 	
