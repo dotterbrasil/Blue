@@ -8,7 +8,7 @@
 				alert("Falha na conexao");
 				document.getElementById("status").innerHTML = "Falha na conexao";				
 			},			
-			time: function(){			
+			time: function(){	alert('Começou o time.');		
 				var link = localStorage.getItem("carro");							
 					bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);			
 			},		
