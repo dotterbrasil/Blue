@@ -29,7 +29,7 @@
 					devices.forEach(function(device) {
 						var link = '';
 							link = '"'+device.id+'"';
-							lista += "<a href='#' onclick='connect("+link+")'>"+device.id+"</a><br>";
+							lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
 							document.getElementById("dispositivos").innerHTML = lista;
 					})
 				});		
