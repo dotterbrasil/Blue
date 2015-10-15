@@ -1,30 +1,28 @@
-	var app = {			
-			connectSuccess: function(){
-				alert("Conectado");
-				document.getElementById("status").innerHTML = "Conectado";	
-				setTimeout(app.time, 3000);
-			},			
-			connectFailure: function(){
-				alert("Falha na conexao");
-				document.getElementById("status").innerHTML = "Falha na conexao";				
-			},		
-			
+	var app = {				
 			time: function(){	
 				alert('Dentro do loop');
 				document.getElementById("status").innerHTML = '...';
 				var link = localStorage.getItem("carro");
-				bluetoothSerial.connect(link, app.connectSuccess, app.desconectado);
+				var status = localStorage.getItem("dispositivo");
 				
-				//bluetoothSerial.isConnected(app.conectado, app.desconectado);		
+				if(status == 'desconectado'){
+					alert('Dispositivo desconectado, tenta conexao');
+					bluetoothSerial.connect(link, app.conectado, app.desconectado);
+				}else{
+					alert('Dispositivo conectado, verificaconexao conexao');
+					bluetoothSerial.isConnected(app.conectado, app.desconectado);	
+					}
 			},					
 			conectado: function(){
-				alert('Continua conectado');
+				alert('Conectado');
 				document.getElementById("status").innerHTML = 'Continua conectado';
+				localStorage.setItem("dispositivo", "conectado");
 				setTimeout(app.time, 3000);
 			},
 			desconectado: function(){
 				alert('Dispositivo desconectado!');
 				document.getElementById("status").innerHTML = "Dispositivo desconectado!";
+				localStorage.setItem("dispositivo", "desonectado");
 				setTimeout(app.time, 3000);
 			},
 	};			
@@ -42,9 +40,10 @@
 	};
 	function connect(link){ 
 		document.getElementById("dispositivos").innerHTML = "";
-		document.getElementById("dispositivos").innerHTML = 'Device: '+link;
-		localStorage.setItem("carro", link);		
-		bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);
+		document.getElementById("dispositivos").innerHTML = 'Dispositivo selecionado:'+link;
+		localStorage.setItem("carro", link);	
+		localStorage.setItem("dispositivo", "desconectado");
+		setTimeout(app.time, 3000);			
 	};
 	
 	
