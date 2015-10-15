@@ -1,17 +1,27 @@
 	var app = {			
 			connectSuccess: function(){
 				alert("Conectado");
-				document.getElementById("status").innerHTML = "Conectado";									
+				document.getElementById("status").innerHTML = "Conectado";	
 				setTimeout(app.time, 3000);
-			},
+			},			
 			connectFailure: function(){
 				alert("Falha na conexao");
 				document.getElementById("status").innerHTML = "Falha na conexao";				
-			},			
-			time: function(){	alert('Começou o time.');		
-				var link = localStorage.getItem("carro");							
-					bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);			
 			},		
+			
+			time: function(){	
+				alert('Dentro do loop');					
+				bluetoothSerial.isConnected(app.conectado, app.desconectado);		
+			},		
+			
+			conectado: function(){
+				alert('Continua conectado');
+				setTimeout(app.time, 3000);
+			},
+			desconectado: function(){
+				alert('Dispositivo desconectado!');
+				document.getElementById("status").innerHTML = "Dispositivo desconectado!";
+			},
 	};			
 	function list(){
 					document.getElementById("status").innerHTML = '';
