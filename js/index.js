@@ -24,6 +24,7 @@
 		}, alert("Error #3"));				
 	};
 	function list(){ 
+					document.getElementById("status").innerHTML = '';
 					var lista = "";
 					bluetoothSerial.list(function(devices) { //---- bluetoothSerial.list
 					devices.forEach(function(device) {
