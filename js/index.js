@@ -12,7 +12,10 @@
 			time: function(){	
 				alert('Dentro do loop');
 				document.getElementById("status").innerHTML = '...';
-				bluetoothSerial.isConnected(app.conectado, app.desconectado);		
+				var link = localStorage.getItem("carro");
+				bluetoothSerial.connect(link, app.connectSuccess, app.desconectado);
+				
+				//bluetoothSerial.isConnected(app.conectado, app.desconectado);		
 			},					
 			conectado: function(){
 				alert('Continua conectado');
