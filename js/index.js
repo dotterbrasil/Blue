@@ -10,12 +10,13 @@
 			},		
 			
 			time: function(){	
-				alert('Dentro do loop');					
+				alert('Dentro do loop');
+				document.getElementById("status").innerHTML = '...';
 				bluetoothSerial.isConnected(app.conectado, app.desconectado);		
 			},		
 			
 			conectado: function(){
-				alert('Continua conectado');
+				document.getElementById("status").innerHTML = 'Continua conectado';
 				setTimeout(app.time, 3000);
 			},
 			desconectado: function(){
@@ -38,8 +39,7 @@
 	function connect(link){ 
 		document.getElementById("dispositivos").innerHTML = "";
 		document.getElementById("dispositivos").innerHTML = 'Device: '+link;
-		localStorage.setItem("carro", link);
-		
+		localStorage.setItem("carro", link);		
 		bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);
 	};
 	
