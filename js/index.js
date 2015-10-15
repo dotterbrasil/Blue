@@ -22,7 +22,7 @@
 			desconectado: function(){
 				alert('Dispositivo desconectado!');
 				document.getElementById("status").innerHTML = "Dispositivo desconectado!";
-				localStorage.setItem("dispositivo", "desonectado");
+				localStorage.setItem("dispositivo", "desconectado");
 				setTimeout(app.time, 3000);
 			},
 	};			
