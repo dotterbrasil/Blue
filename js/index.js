@@ -1,20 +1,15 @@
 	var app = {			
 			connectSuccess: function(){
-				status = "Conectado";
-				document.getElementById("status").innerHTML = status;
-				localStorage.setItem("verificacao", status);	
-				alert(status);						
+				alert("Conectado");
+				document.getElementById("status").innerHTML = "Conectado";									
 				setTimeout(app.time, 3000);
 			},
 			connectFailure: function(){
-				status = "Falha na conexao";
-				document.getElementById("status").innerHTML = status;
-				localStorage.setItem("verificacao", status);
-				alert(status);
+				alert("Falha na conexao");
+				document.getElementById("status").innerHTML = "Falha na conexao";				
 			},			
 			time: function(){			
-				var link = localStorage.getItem("carro");				
-				var status = localStorage.getItem("verificacao");					
+				var link = localStorage.getItem("carro");							
 					bluetoothSerial.connect(link, app.connectSuccess, app.connectFailure);			
 			},		
 	};			
