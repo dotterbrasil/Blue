@@ -1,5 +1,6 @@
 	var app = {				
 			time: function(){	
+				alert('loop');
 				document.getElementById("status").innerHTML = 'Load...';
 				var link = localStorage.getItem("carro");
 				var status = localStorage.getItem("dispositivo");
@@ -13,12 +14,13 @@
 					}
 			},					
 			conectado: function(){
-				alert('On');
+				alert('conectado');
 				document.getElementById("status").innerHTML = 'Dispositivo Conectado';
 				localStorage.setItem("dispositivo", "conectado");
 				setTimeout(app.time, 3000);
 			},
 			desconectado: function(){
+				alert('desconectado');
 				document.getElementById("status").innerHTML = "Dispositivo desconectado!";
 				localStorage.setItem("dispositivo", "desconectado");
 				setTimeout(app.time, 3000);
