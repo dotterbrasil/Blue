@@ -13,7 +13,8 @@
     </author>
 	
 	<!--gap:plugin name="com.megster.cordova.bluetoothserial" version="0.3.3" /-->
-	<gap:plugin name="org.bcsphere.bluetooth" version="0.5.1" />
+	<!--gap:plugin name="org.bcsphere.bluetooth" version="0.5.1" /-->
+	<plugin name="Bluetooth" value="org.apache.cordova.bluetooth.BluetoothPlugin" />
     <gap:plugin name="org.apache.cordova.device" />
 	
 	<preference name="phonegap-version" value="cli-5.2.0" />

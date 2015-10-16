@@ -6,19 +6,26 @@
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>	
         <script type="text/javascript">
-            app.initialize();
-		function load(){alert('ok');
-			BC.Bluetooth.OpenBluetooth(function(){alert("bluetooth opened!");},function(){alert("bluetooth open error!");});
-		};	
+            app.initialize();		
+			
+			function teste(){	
+			alert('1');			
+			var BC = require("org.bcsphere.bcjs");
+			alert('2');
+			
+			BC.Bluetooth.GetPairedDevices(function(devices) {
+						alert(devices);
+				});
+			}			
         </script>
     </head>
     <body onload=''>
 		<br>
             Teste com bluetooth			
 		<br>				    
-            <button onclick='list()'>Cadastrar</button>
+            <!--button onclick='list()'>Cadastrar</button-->
 		<br>
-			<button onclick='load()'>iniciar</button>
+			<button onclick='teste()'>Teste</button>
 		<br>
 			<div id='status'>
 			</div>

@@ -24,10 +24,9 @@
 				setTimeout(app.time, 3000);
 			},
 	};			
-	function list(){alert('dentro da list');
+	function list(){
 					var lista = "";
-					/*bluetoothSerial.list*/
-					BC.Bluetooth.GetPairedDevices(function(devices) {
+					bluetoothSerial.list(function(devices) {
 					devices.forEach(function(device) {
 						var link = '';
 							alert('dentro do device');
@@ -43,6 +42,8 @@
 		localStorage.setItem("carro", link);	
 		localStorage.setItem("dispositivo", "desconectado");
 		setTimeout(app.time, 3000);			
-	};
+	};	
 	
-	
+	//https://github.com/bcsphere/framework/blob/master/org.bluetooth.service/serial_port.js
+	//https://github.com/bcsphere/framework/blob/master/org.bluetooth.profile/serial_port.js
+			
