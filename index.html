@@ -22,13 +22,27 @@
 						alert(devices);
 				});
 			}		*/	
+
+function alfa(){
+
+bluetoothSerial.isConnected(
+    function() {
+        alert("Bluetooth is connected");
+    },
+    function() {
+        alert("Bluetooth is *not* connected");
+    }
+);
+
+
+}
         </script>
     </head>
     <body onload=''>
 		<br>
             Teste com bluetooth			
 		<br>				    
-            <button onclick='list()'>Cadastrar</button>
+            <button onclick='alfa()'>Cadastrar</button>
 		<br>
 			<!--button onclick='teste()'>Teste</button-->
 		<br>
