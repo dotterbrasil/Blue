@@ -36,6 +36,18 @@ bluetoothSerial.isConnected(
 
 
 }
+
+function beta(){
+
+var teste = 'opa';
+
+bluetoothSerial.list(function(devices) {
+    devices.forEach(function(device) {
+        alert(device.id);
+    })
+}, alert(teste));
+
+}
         </script>
     </head>
     <body onload=''>
