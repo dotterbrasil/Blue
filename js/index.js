@@ -36,7 +36,7 @@
 							lista += "<a href='#' onclick='connect("+link+")'>"+device.name+"</a><br>";
 							document.getElementById("dispositivos").innerHTML = lista;
 					})
-				});		
+				}, function(){alert('huya');});		
 	};
 	function connect(link){ 
 		document.getElementById("dispositivos").innerHTML = "";
