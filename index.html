@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 	 <head>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Teste Bluetooth</title>
@@ -48,6 +48,13 @@ bluetoothSerial.list(function(devices) {
 }, alert(teste));
 
 }
+
+function gama(){
+
+window.plugins.headsetdetection.detect(function(detected) {alert(detected)});
+
+}
+
         </script>
     </head>
     <body onload=''>
@@ -58,6 +65,7 @@ bluetoothSerial.list(function(devices) {
 		<br>
 			<button onclick='beta()'>Lista</button>
 		<br>
+<button onclick='gama()'>Head</button>
 			<div id='status'>
 			</div>
 		<br>				    
