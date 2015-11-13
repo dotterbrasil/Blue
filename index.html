@@ -49,7 +49,18 @@ bluetoothSerial.list(function(devices) {
 
 }
 
+function lista(){
+alert("detectado"+name);
+}
+
+
+function erro(){
+	alert("erro");
+}
+
 function gama(){
+
+bluetoothle.startScan(lista, erro, true);
 
 window.plugins.headsetdetection.detect(function(detected) {alert(detected)});
 
